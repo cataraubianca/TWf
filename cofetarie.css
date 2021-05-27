@@ -1,0 +1,264 @@
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+body{
+    object-fit:fill;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWdyhSTA8C3xdeqGIe6AvV7GN4zhgfn5yRwg&usqp=CAU');
+}
+
+.grid {
+display: grid;
+grid-template-rows: 10% 50% 30% 40% ;
+grid-template-areas:
+    "header header header"
+    "main main produse"
+    "recenzii citat produse"
+    "footer footer footer";
+grid-template-columns: 27.5% 27.5% 45% ;
+height:100vh;
+margin: 2em;
+    display: grid;
+    background-color: #ffef96;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.recenzii{
+    grid-area: recenzii ;
+    background-color: #886883;
+    border-radius: 25%;
+    width: 80%;
+    text-align:center;
+    line-height:200%;
+    font-family: 'Cormorant', serif;
+}
+
+.header{
+    grid-area: header ;
+    background-color:#b2b2b2;
+    border-top-left-radius:  50px;
+    border-top-right-radius:  50px;   
+     overflow: hidden;
+    padding: 20px 10px;
+    font-family: 'Cormorant', serif;
+}
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+} 
+
+.header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.header a.active {
+    background-color: #ffef96;  
+}
+#slider{
+    overflow: hidden;
+    object-fit: contain;
+    max-width: 100%; 
+    height: auto ;
+}
+#slider figure{
+    position: relative;
+    animation:10s slider infinite;
+    width:500%;
+    margin:0;
+    left:0;
+    bottom:0;
+    height: auto;
+}
+#slider figure img{
+    float:left;
+    width:20%;
+    bottom:0%;
+}
+@keyframes slider{
+    0%{
+        left:0;
+    }
+    20%{
+        left:0;
+    }
+    25%{
+        left:-100%;
+    }
+    45%{
+        left:-100%;
+    }
+    50%{
+        left:-200%;
+    }
+    70%{
+        left:-200%;
+    }
+    75%{
+        left:-300%;
+    }
+    95%{
+        left:-300%;
+    }
+    100%{
+        left:-400%
+    }
+
+}
+.main{
+    grid-area: main;
+    background-color: #ffef96;
+    font-family: 'Satisfy', cursive;
+    text-align:center;
+    top: 30%;
+    line-height: 300%;
+    margin-top:15%;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: #b2b2b2;
+    border-bottom-left-radius:  50px;
+    border-bottom-right-radius:  50px;
+    text-align:center;
+    height:25%;
+    font-family: 'Cormorant', serif;
+}
+
+.citat{
+    grid-area: citat;
+    background-color: #50394c;
+    border-radius:25%;
+
+    text-align:center;
+    line-height:150%;
+    font-family: 'Cormorant', serif;
+}
+
+#slidertext{
+    overflow: hidden;
+    object-fit: fill;
+    font-family: 'Cormorant', serif;
+}
+#slidertext figure{
+    position: relative;
+    animation:10s slider infinite;
+    width:500%;
+    margin:0;
+    left:0;
+    bottom:0;
+    text-align:center;
+}
+#slidertext figure p{
+    float:left;
+    width:20%;
+    bottom:0%;
+}
+@keyframes slider{
+    0%{
+        left:0;
+    }
+    20%{
+        left:0;
+    }
+    25%{
+        left:-100%;
+    }
+    45%{
+        left:-100%;
+    }
+    50%{
+        left:-200%;
+    }
+    70%{
+        left:-200%;
+    }
+    75%{
+        left:-300%;
+    }
+    95%{
+        left:-300%;
+    }
+    100%{
+        left:-400%
+    }
+
+}
+@media only screen and (max-width: 767px)
+{.grid{
+    display:grid;
+    grid-template-columns:20%, 1fr, 1fr; 
+    grid-template-rows:10% 40% 40% 30% 100%;
+    grid-template-areas:
+    'header header header'
+    'produse produse produse'
+    'main main main'
+    'recenzii recenzii recenzii'
+    'footer footer footer footer';
+    font-size:60%;
+    flex-direction:row;}
+
+.produse{
+    grid-area:produse;
+width: 100%;
+float:left;
+line-height-step: 100%;}
+.produse{
+    float: top;
+}
+.main{font: size 15px;}
+.recenzii{font: size 15;
+width:300%;
+text-align:right;
+line-height:200%;
+vertical-align:middle;
+height:30%;
+display:block;}
+.citat{
+    grid-area:citat;
+    display:none;}
+.footer{
+    grid-area:footer;
+    height:25%;
+}
+}
+@media (min-width: 768px) and (max-width: 1280px){
+    .grid{
+        display:grid;
+        grid-template-columns:20%, 1fr, 1fr; 
+        grid-template-rows:10% 40% 40% 30% 100%;
+    }
+    .citat{
+        grid-area:citat;
+        float:right;}
+    .produse{
+        grid-area:produse;
+            float: left;
+    }
+    .main{grid-area:main;
+        font: size 100px;}
+    .recenzii{
+        grid-area:recenzii;
+        font: size 100px;}
+    .citat{
+        grid-area:citat;
+        font: size 60px;}
+
+}
+@media (min-width: 1281px){
+    .grid{grid-template-columns: 2fr, 2fr, 2fr;}
+    .main{grid-area:main;
+        font: size 200px;}
+    .recenzii{
+        grid-area:recenzii;
+        font: size 200px;}
+    .citat{
+        grid-area:citat;
+        font: size 200px;}
+
+}
